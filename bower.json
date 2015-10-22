@@ -1,0 +1,23 @@
+{
+  "name": "wedding-platform",
+  "version": "0.0.1",
+  "homepage": "https://github.com/rix1/wedding-platform",
+  "authors": [
+    "rix1 <rikardeide@gmail.com>"
+  ],
+  "description": "a platform for single page scrollable apps with an RSVP form",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3",
+    "angular": "~1.4.7"
+  }
+}
