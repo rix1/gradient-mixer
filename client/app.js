@@ -44,49 +44,48 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 	$scope.addItem = function (color) {
 		$scope.num = rand();
 
-
-		console.log(color);
-		color = "#"+color;
-
-		console.log(color);
-
-		var regex  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
+		var regex  = /([0-9A-F]{6})|([0-9A-F]{3})/ig;
 
 		if(typeof color === "undefined" || color == null || color == ""){
-			// Show error message
+			$scope.error = "Wow - weird error... I did not see that one coming.";
 		}else{
 			if(regex.test(color)) {
-				permute(color);
+				var colors = color.match(regex);
+				permute(colors);
 			}else{
-				$scope.error = "Please type a valid HEX color without #";
-				console.log("error happened");
+				$scope.error = "Please type one or more valid HEX colors";
 			}
 		}
 		$scope.color= "";
 	};
 
-	var permute = function(newColor){
-		console.log("permuting");
-		if($scope.colors < 1){
-			$scope.colors.push(newColor);
-			$scope.error = "Please add another color to create a gradient!";
-		}else{
-			$scope.error = "";
-			$scope.colors.forEach(function (curr, index, arr) {
-				console.log(curr);
-				$scope.gradients.push([newColor, curr])
-			});
-			$scope.colors.push(newColor);
+	var permute = function (newColors) {
+		//console.log("the truth: "+ newColors);
+		var iterations = newColors.length; // Javascript apparently checks the length of the array at each iteation.
+
+		if ($scope.colors < 1) { 						// No colors exists prior to this
+			$scope.colors.push(newColors.pop());
+			$scope.error = (iterations > 1) ? '': "Please add another color to create a gradient!";
+			iterations--;
 		}
-		console.log($scope.colors);
-		console.log($scope.gradients);
-	}
+
+		for(var i = 0; i< iterations; i++){
+			var temp = newColors.pop();
+
+			$scope.colors.forEach(function (curr) {
+				$scope.gradients.push([temp, curr]);
+			});
+			$scope.colors.push(temp);
+		}
+	};
 }]);
 
 
 myApp.factory('Content', function () {
 	return {
 		heading: "Gradient Mixer!",
-		intro: "This is a simple app that creates permutations of all colors you put in. Enjoy!"
+		intro: "This is a simple app that creates permutations of all colors you type in the field below. Enjoy!",
+		tip: "Tip: Paste many colors at once! Click on the gradients to expand."
+
 	};
 });

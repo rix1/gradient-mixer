@@ -16,6 +16,7 @@ angular.module('myApp.directives.gradient', [])
 
         if($scope.colors.length < 2){
             $scope.colors.push($scope.colors[0]);
+            console.log("adding colors");
         }
         console.log($scope.colors);
     }]);

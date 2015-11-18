@@ -25,6 +25,7 @@
 			<div class="hero">
 				<h1>{{content.heading}}!</h1>
 				<p>{{content.intro}}</p>
+				<p><small>{{content.tip}}</small></p>
 			</div>
 		</div>
 
@@ -36,16 +37,14 @@
 			<!--{{grad}}-->
 		</div>
 
-
 		<div class="el">
-			#<input tabindex="1" ng-model="color" type="text" maxlength="6"/>
+			<input tabindex="1" ng-model="color" type="text" placeholder="Enter one or multiple HEX colors here"/>
 		</div>
 		<div class="error"><small>{{error}}</small></div>
 		<button class="btn-round" ng-click="addItem(color)">
 			<s class="bar"></s>
 			<s class="bar"></s>
 		</button>
-
 	</div>
 	<footer ng-controller="homeCtrl">
 		<h4>Made with <{{num}} by Rix1</h4>
