@@ -4,8 +4,7 @@ angular.module('myApp.directives.gradient', [])
             restrict: 'E',
             transclude: true,
             scope: {
-                color1: '@',
-                color2: '@'
+                colors: '='
             },
             controller: 'gradientCtrl',
             templateUrl: "components/gradient/gradient.html"
@@ -14,4 +13,9 @@ angular.module('myApp.directives.gradient', [])
 
     .controller('gradientCtrl', ['$scope', function($scope) {
         $scope.checked = false;
+
+        if($scope.colors.length < 2){
+            $scope.colors.push($scope.colors[0]);
+        }
+        console.log($scope.colors);
     }]);

@@ -23,34 +23,66 @@ myApp.controller('navCtrl', ['$scope', 'Content', function ($scope, Content) {
 }]);
 
 myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
-	console.log("home controller invoked");
-	var defaultColors = {colorA: "#00FF00", colorB: "#FFFF00"};
+	
+	var rand = function () {
+		return Math.floor(Math.random()*10);
+	};
+	$scope.num = rand();
+
+	$scope.gradients = [];
+	$scope.colors = [];
+
+	$scope.error = "";
+
 
 	$scope.content = Content;
 	$scope.toggle = function() {
 		console.log("CLICK");
 	};
 
-	$scope.gradients = [];
 
 	$scope.addItem = function (color) {
+		$scope.num = rand();
 
-		color.a = "#"+color.a;
-		color.b = "#"+color.b;
 
-		var isOk  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
+		console.log(color);
+		color = "#"+color;
+
+		console.log(color);
+
+		var regex  = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
 
 		if(typeof color === "undefined" || color == null || color == ""){
 			// Show error message
 		}else{
-			//if(color.a.match(isOk).length > 0 && color.b.match(isOk).length > 0){
-			if(isOk.test(color.a) && isOk.test(color.b)) {
-				$scope.gradients.push(color);
+			//if(color.a.match(regex).length > 0 && color.b.match(regex).length > 0){
+			if(regex.test(color)) {
+				//$scope.colors.push(color);
+				permute(color);
+			}else{
+				$scope.error = "Please type a valid HEX color without #";
+				console.log("error happened");
 			}
 		}
 		$scope.color= "";
 	};
 
+	var permute = function(newColor){
+		console.log("permuting");
+		if($scope.colors < 1){
+			$scope.colors.push(newColor);
+			$scope.error = "Please add another color to create a gradient!";
+		}else{
+			$scope.error = "";
+			$scope.colors.forEach(function (curr, index, arr) {
+				console.log(curr);
+				$scope.gradients.push([newColor, curr])
+			});
+			$scope.colors.push(newColor);
+		}
+		console.log($scope.colors);
+		console.log($scope.gradients);
+	}
 }]);
 
 

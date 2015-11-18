@@ -29,23 +29,26 @@
 		</div>
 
 		<div ng-repeat="grad in gradients track by $index">
-			<gradient color1="{{grad.a}}" color2="{{grad.b}}">
+			<gradient colors="grad">
 			</gradient>
-		</div>
-		
-		<div class="el">
-			#<input tabindex="1" ng-model="color.a" type="text" maxlength="6"/>
-			#<input tabindex="2" ng-model="color.b" type="text" maxlength="6"/>
+			<!--{{gradients}}-->
+			<!--vs-->
+			<!--{{grad}}-->
 		</div>
 
+
+		<div class="el">
+			#<input tabindex="1" ng-model="color" type="text" maxlength="6"/>
+		</div>
+		<div class="error"><small>{{error}}</small></div>
 		<button class="btn-round" ng-click="addItem(color)">
 			<s class="bar"></s>
 			<s class="bar"></s>
 		</button>
 
 	</div>
-	<footer>
-		<h4>Made with <5 by Rix1</h4>
+	<footer ng-controller="homeCtrl">
+		<h4>Made with <{{num}} by Rix1</h4>
 	</footer>
 </div>
 </body>
