@@ -1,14 +1,14 @@
 {
-  "name": "wedding-platform",
+  "name": "gradient-mixer",
   "version": "0.0.1",
-  "description": "wedding platform to easily conifg and edit single scrollable page with RSVP form",
+  "description": "",
   "main": "client/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/rix1/wedding-platform.git"
+    "url": "git+ssh://git@github.com/rix1/gradient-mixer.git"
   },
   "keywords": [
     "webpage",
@@ -17,9 +17,9 @@
   "author": "@rix1",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rix1/wedding-platform/issues"
+    "url": "https://github.com/rix1/gradient-mixer/issues"
   },
-  "homepage": "https://github.com/rix1/wedding-platform#readme",
+  "homepage": "https://github.com/rix1/gradient-mixer#readme",
   "dependencies": {
     "google-spreadsheet": "^1.0.1",
     "http-server": "^0.8.5"

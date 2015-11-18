@@ -1,0 +1,240 @@
+html,
+body {
+  height: 100%;
+  /*background: blue;*/
+}
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: "bebas-neue", sans-serif;
+}
+#wrapper {
+  position: relative;
+  min-height: 100%;
+  /*background-color: red;*/
+}
+h1 {
+  font-family: "bebas-neue", sans-serif;
+  text-align: center;
+}
+footer {
+  /*background-color: gray;*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.content-wrapper {
+  /*background-color: green;*/
+  display: flex;
+  flex-direction: column;
+  -webkit-align-items: center;
+  padding: 10px;
+  padding-bottom: 100px;
+}
+.el {
+  padding: 15px;
+  margin: 10px;
+  font-family: "bebas-neue", sans-serif;
+  font-size: 1.5em;
+}
+.content {
+  position: relative;
+  width: 80%;
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+@media all and (max-width: 500px) {
+  .content {
+    width: 100%;
+  }
+  .content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+/*========= HERO ===========*/
+.hero {
+  /*background: grey;*/
+  text-align: center;
+}
+.hero > h1 {
+  font-family: "blenny", "bebas-neue", sans-serif;
+  font-size: 6em;
+  background: -webkit-linear-gradient(left, #FFFF00, #00FFFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 80%;
+}
+.hero > p {
+  font-size: 2em;
+  color: #423E3D;
+}
+/*========= NAVBAR ===========*/
+.nav-wrapper {
+  position: relative;
+  top: 0;
+  z-index: 10;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.nav {
+  /*background-color: pink;*/
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.nav-item {
+  font-family: "bebas-neue", sans-serif;
+  font-size: 1.4em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  /*background-color: indianred;*/
+}
+.nav-item:hover {
+  border-bottom: 1px solid black;
+}
+.nav-item:visited {
+  color: black;
+}
+.btn {
+  border: none;
+  color: white;
+  background-color: #38A591;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  -webkit-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  -moz-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  -ms-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  -o-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+}
+.btn:hover {
+  width: 60px;
+  height: 60px;
+}
+.btn-round {
+  border: none;
+  color: white;
+  background-color: #38A591;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  -webkit-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  -moz-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  -ms-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  -o-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.4), height 0.5s cubic-bezier(0, 0.1, 0, 1.4);
+  font-size: 4em;
+  padding-top: 8px;
+  outline: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.btn-round:hover {
+  width: 60px;
+  height: 60px;
+}
+.btn-round:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.btn-round:focus {
+  width: 60px;
+  height: 60px;
+}
+.btn-round:active {
+  box-shadow: none;
+  background-color: #329280;
+}
+.btn-round .bar {
+  height: 4px;
+  width: 20px;
+  background-color: white;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+.btn-round .bar:first-child {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.btn-round .bar:last-child {
+  -webkit-transform: translateY(-4px);
+  -moz-transform: translateY(-4px);
+  -ms-transform: translateY(-4px);
+  -o-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+input {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  height: 25px;
+  margin: 10px;
+  width: 80px;
+}
+.gradient {
+  width: 400px;
+  height: 30px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: 7.5px;
+  background: -webkit-linear-gradient(left, #00FF00, #FFFF00);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #00FF00, #FFFF00);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #00FF00, #FFFF00);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #00FF00, #FFFF00);
+  /* Standard syntax */
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-content: center;
+  -webkit-align-items: center;
+  -webkit-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.2) 0.6s, height 0.3s cubic-bezier(0, 0.1, 0, 1.2) 0.2s, margin 0.3s cubic-bezier(0, 0.1, 0, 1.4) 0.4s;
+  -moz-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.2) 0.6s, height 0.3s cubic-bezier(0, 0.1, 0, 1.2) 0.2s, margin 0.3s cubic-bezier(0, 0.1, 0, 1.4) 0.4s;
+  -ms-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.2) 0.6s, height 0.3s cubic-bezier(0, 0.1, 0, 1.2) 0.2s, margin 0.3s cubic-bezier(0, 0.1, 0, 1.4) 0.4s;
+  -o-transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.2) 0.6s, height 0.3s cubic-bezier(0, 0.1, 0, 1.2) 0.2s, margin 0.3s cubic-bezier(0, 0.1, 0, 1.4) 0.4s;
+  transition: width 0.5s cubic-bezier(0, 0.1, 0, 1.2) 0.6s, height 0.3s cubic-bezier(0, 0.1, 0, 1.2) 0.2s, margin 0.3s cubic-bezier(0, 0.1, 0, 1.4) 0.4s;
+}
+.gradient h1 {
+  font-size: 2em;
+  opacity: 0;
+  -webkit-transition: all 0.4s cubic-bezier(0, 0.1, 0, 1.2) 0.2s;
+}
+.gradient:hover {
+  cursor: pointer;
+}
+.gradient.checked {
+  box-shadow: 2px 0 3px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  height: 120px;
+}
+@media all and (max-width: 500px) {
+  .gradient.checked {
+    width: 100%;
+  }
+}
+.gradient.checked h1 {
+  opacity: 1;
+  -webkit-transition: all 0.4s cubic-bezier(0, 0.1, 0, 1.2) 0.3s;
+}
