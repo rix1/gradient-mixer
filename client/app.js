@@ -55,9 +55,7 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 		if(typeof color === "undefined" || color == null || color == ""){
 			// Show error message
 		}else{
-			//if(color.a.match(regex).length > 0 && color.b.match(regex).length > 0){
 			if(regex.test(color)) {
-				//$scope.colors.push(color);
 				permute(color);
 			}else{
 				$scope.error = "Please type a valid HEX color without #";
