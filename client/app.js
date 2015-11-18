@@ -19,10 +19,25 @@ myApp.controller('navCtrl', ['$scope', 'Content', function ($scope, Content) {
 				break;
 		}
 	}
-
 }]);
 
 myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
+
+	// First, checks if it isn't implemented yet.
+	if (!String.prototype.format) {
+		String.prototype.format = function() {
+			var args = arguments;
+			return this.replace(/{(\d+)}/g, function(match, number) {
+				return typeof args[number] != 'undefined'
+					? args[number]
+					: match
+					;
+			});
+		};
+	}
+
+	var exportGradients = {}; // Object containing the gradients that are to be exported
+
 
 	var rand = function () {
 		return Math.floor(Math.random()*10);
@@ -33,7 +48,6 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 	$scope.colors = [];
 
 	$scope.error = "";
-
 
 	$scope.content = Content;
 	$scope.toggle = function() {
@@ -73,9 +87,37 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 			var temp = newColors.pop();
 
 			$scope.colors.forEach(function (curr) {
-				$scope.gradients.push([temp, curr]);
+				$scope.gradients.push([temp, curr, $scope.gradients.length]);
 			});
 			$scope.colors.push(temp);
+		}
+	};
+
+	$scope.exportCSS = function (arr, show) {
+		if(show){
+			exportGradients[arr[2]] = arr;
+		}else{
+			delete exportGradients[arr[2]];
+		}
+		generateCSS();
+	};
+
+
+	var generateCSS = function () {
+		$scope.generated_css = "";
+		var cssTemplate = " \
+// Color #{0} \n\
+	background: -webkit-linear-gradient({1}, {2}); /* For Safari 5.1 to 6.0 */ \n\
+	background: -o-linear-gradient({1}, {2}); /* For Opera 11.1 to 12.0 */ \n\
+	background: -moz-linear-gradient({1}, {2}); /* For Firefox 3.6 to 15 */ \n\
+	background: linear-gradient({1}, {2}); /* Standard syntax */ \n\
+	";
+		var counter = 0;
+		for (var key in exportGradients) {
+			if (exportGradients.hasOwnProperty(key)) {
+				$scope.generated_css += "\n\n" + cssTemplate.format(counter, "#"+exportGradients[key][0], "#"+exportGradients[key][1]);
+			}
+			counter ++;
 		}
 	};
 }]);

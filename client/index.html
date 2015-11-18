@@ -30,7 +30,7 @@
 		</div>
 
 		<div ng-repeat="grad in gradients track by $index">
-			<gradient colors="grad">
+			<gradient colors="grad" add-to-export="exportCSS(arg1,arg2)">
 			</gradient>
 			<!--{{gradients}}-->
 			<!--vs-->
@@ -38,13 +38,17 @@
 		</div>
 
 		<div class="el">
-			<input tabindex="1" ng-model="color" type="text" placeholder="Enter one or multiple HEX colors here"/>
+			<input tabindex="1" ng-model="color" type="text" placeholder="Enter one or multiple HEX colors here" autofocus autocomplete="off"/>
 		</div>
 		<div class="error"><small>{{error}}</small></div>
 		<button class="btn-round" ng-click="addItem(color)">
 			<s class="bar"></s>
 			<s class="bar"></s>
 		</button>
+		<div class="exportarea" ng-show="gradients.length > 0">
+			<h3>Exported CSS: <small>(select and copy)</small></h3>
+			<textarea cols="60" rows="12" wrap="off">{{generated_css}}</textarea>
+		</div>
 	</div>
 	<footer ng-controller="homeCtrl">
 		<h4>Made with <{{num}} by Rix1</h4>

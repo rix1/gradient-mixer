@@ -4,9 +4,9 @@
 <!--</div>-->
 
 
-<div class="gradient" ng-click="checked = !checked" ng-class="checked ? 'checked': ''"
+<div class="gradient" ng-click="click()" ng-class="checked ? 'checked': ''"
         ng-style="{background: '-webkit-linear-gradient(left, #'+colors[0]+', #'+colors[1]+')'}">
-    <h1>Gradient from #{{colors[0]}} to #{{colors[1]}}</h1>
+    <h1 ng-style="{color: textcolor}">Gradient from #{{colors[0]}} to #{{colors[1]}}</h1>
 </div>
 
 <!--<div ng-style="{ background: 'transparent url({{ eventInfo.eventHeaderImg }}) top center no-repeat' }"></div> -->

@@ -1,7 +1,6 @@
 html,
 body {
   height: 100%;
-  /*background: blue;*/
 }
 html {
   position: relative;
@@ -11,14 +10,12 @@ html {
 #wrapper {
   position: relative;
   min-height: 100%;
-  /*background-color: red;*/
 }
 h1 {
   font-family: "bebas-neue", sans-serif;
   text-align: center;
 }
 footer {
-  /*background-color: gray;*/
   color: rgba(66, 62, 61, 0.4);
   text-transform: uppercase;
   font-size: 70%;
@@ -30,7 +27,6 @@ footer {
   text-align: center;
 }
 .content-wrapper {
-  /*background-color: green;*/
   display: flex;
   flex-direction: column;
   -webkit-align-items: center;
@@ -42,6 +38,30 @@ footer {
   margin: 10px;
   font-family: "bebas-neue", sans-serif;
   font-size: 1.5em;
+}
+.exportarea {
+  margin-top: 35px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: rgba(66, 62, 61, 0.05);
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+.exportarea h3 {
+  margin: 0;
+  padding-bottom: 5px;
+  color: rgba(66, 62, 61, 0.8);
+  border-bottom: 2px solid rgba(66, 62, 61, 0.2);
+  width: 100%;
+}
+.exportarea textarea {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  resize: none;
+  color: #2C2C2C;
+  background-color: transparent;
 }
 .error {
   margin-top: -5px;
@@ -244,6 +264,7 @@ input:focus {
 .gradient h1 {
   font-size: 2em;
   opacity: 0;
+  letter-spacing: 1.5px;
   -webkit-transition: all 0.4s cubic-bezier(0, 0.1, 0, 1.2) 0.2s;
 }
 .gradient:hover {
