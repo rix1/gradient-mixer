@@ -23,7 +23,7 @@ myApp.controller('navCtrl', ['$scope', 'Content', function ($scope, Content) {
 }]);
 
 myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
-	
+
 	var rand = function () {
 		return Math.floor(Math.random()*10);
 	};
