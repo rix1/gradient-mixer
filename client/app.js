@@ -4,21 +4,6 @@ var myApp = angular.module('myApp',[
 
 myApp.controller('navCtrl', ['$scope', 'Content', function ($scope, Content) {
 
-	$scope.goTo = function (num) {
-		switch (num) {
-			case 1:
-				Content.heading = "First page";
-				break;
-			case 2:
-				console.log("number: " + num);
-				Content.heading = "Second page";
-				break;
-			case 3:
-				Content.heading = "Third page";
-				console.log("number: " + num);
-				break;
-		}
-	}
 }]);
 
 myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
@@ -50,10 +35,6 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 	$scope.error = "";
 
 	$scope.content = Content;
-	$scope.toggle = function() {
-		console.log("CLICK");
-	};
-
 
 	$scope.addItem = function (color) {
 		$scope.num = rand();
@@ -74,7 +55,6 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 	};
 
 	var permute = function (newColors) {
-		//console.log("the truth: "+ newColors);
 		var iterations = newColors.length; // Javascript apparently checks the length of the array at each iteation.
 
 		if ($scope.colors < 1) { 						// No colors exists prior to this

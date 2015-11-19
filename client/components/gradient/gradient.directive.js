@@ -18,7 +18,6 @@ angular.module('myApp.directives.gradient', [])
 
         if($scope.colors.length < 2){
             $scope.colors.push($scope.colors[0]);
-            console.log("adding colors");
         }
 
         $scope.click = function () {
@@ -32,11 +31,9 @@ angular.module('myApp.directives.gradient', [])
             var color2 = hexToR($scope.colors[1]) + hexToG($scope.colors[1]) + hexToB($scope.colors[1]);
 
             var sum = (color1 + color2) / 2;
-            console.log(sum);
             if(sum < DARK_TRESHOLD){
                 $scope.textcolor = "white";
             }else{
-                console.log("SUM WAS: " + sum);
             }
         })();
 
