@@ -21,11 +21,10 @@
   },
   "homepage": "https://github.com/rix1/gradient-mixer#readme",
   "dependencies": {
-    "google-spreadsheet": "^1.0.1",
     "http-server": "^0.8.5"
   },
   "scripts": {
       "postinstall": "bower install",
-	  "start": "http-server ./client -p 8000 -c-1"
+  	  "start": "http-server ./client -p 8000 -c-1"
   }
 }
