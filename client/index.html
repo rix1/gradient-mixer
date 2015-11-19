@@ -10,26 +10,19 @@
 	<link rel="icon" type="image/png" href="favicon.ico" sizes="32x32">
 </head>
 <body>
-<div id="wrapper">
-	<div class="nav-wrapper">
+<div id="wrapper" ng-cloak>
+	<div class="nav-wrapper"></div>
 
-		<nav class="nav" ng-controller="navCtrl" ng-hide="true">
-			<a class="nav-item" href="" ng-click="goTo(1)" title="">Test 1</a>
-			<a class="nav-item" ng-click="goTo(2)" href="" title="">Test 2</a>
-			<a class="nav-item" ng-click="goTo(3)" href="" title="">Test </a>
-		</nav>
-	</div>
-
-	<div class="content-wrapper" ng-controller="homeCtrl">
+	<div class="content-wrapper" ng-controller="homeCtrl" class="ng-cloak">
 		<div class="content">
-			<div class="hero">
+			<div class="hero" ng-cloak>
 				<h1>{{content.heading}}!</h1>
 				<p>{{content.intro}}</p>
 				<p><small>{{content.tip}}</small></p>
 			</div>
 		</div>
 
-		<div ng-repeat="grad in gradients track by $index">
+		<div ng-repeat="grad in gradients track by $index" ng-cloak>
 			<gradient colors="grad" add-to-export="exportCSS(arg1,arg2)">
 			</gradient>
 			<!--{{gradients}}-->
@@ -40,17 +33,17 @@
 		<div class="el">
 			<input tabindex="1" ng-model="color" type="text" placeholder="Enter one or multiple HEX colors here" autofocus autocomplete="off"/>
 		</div>
-		<div class="error"><small>{{error}}</small></div>
+		<div ng-cloak class="error"><small>{{error}}</small></div>
 		<button class="btn-round" ng-click="addItem(color)">
 			<s class="bar"></s>
 			<s class="bar"></s>
 		</button>
 		<div class="exportarea" ng-show="generated_css.length > 0">
 			<h3>Exported CSS: <small>(select and copy)</small></h3>
-			<textarea cols="60" rows="12" wrap="off">{{generated_css}}</textarea>
+			<textarea cols="60" rows="12" wrap="off" ng-cloak>{{generated_css}}</textarea>
 		</div>
 	</div>
-	<footer ng-controller="homeCtrl">
+	<footer ng-controller="homeCtrl" ng-cloak>
 		<h4>Made with <{{num}} by Rix1</h4>
 	</footer>
 </div>
