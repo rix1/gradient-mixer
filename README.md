@@ -1,14 +1,6 @@
-# HTML/CSS/Angular Boilerplate
+# Gradient Mixer
 
-TODO: Write a project description
-
-## Installation
-
-TODO: Describe the installation process
-
-## Usage
-
-TODO: Write usage instructions
+This is a super little application that I hope pretty much everyone will find useful.
 
 ## Contributing
 
@@ -20,12 +12,12 @@ TODO: Write usage instructions
 
 ## History
 
-TODO: Write history
+2015-11-19 Application is deployed to mix.rix1.org
 
 ## Credits
 
-Rikard Eide
+@rix1
 
 ## License
 
-TODO: Write license
+Hurry! Use it however you want before I chose some mega strict licence.
