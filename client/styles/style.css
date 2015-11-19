@@ -11,6 +11,16 @@ html {
   position: relative;
   min-height: 100%;
 }
+/* 
+  Allow angular.js to be loaded in body, hiding cloaked elements until 
+  templates compile.  The !important is important given that there may be 
+  other selectors that are more specific or come later and might alter display.  
+ */
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+  display: none !important;
+}
 h1 {
   font-family: "bebas-neue", sans-serif;
   text-align: center;
@@ -100,6 +110,7 @@ footer {
   line-height: 80%;
 }
 .hero > p {
+  font-family: "bebas-neue", sans-serif;
   font-size: 2em;
   color: #423E3D;
 }
@@ -265,6 +276,8 @@ input:focus {
 .gradient h1 {
   font-size: 2em;
   opacity: 0;
+  height: 0;
+  overflow: hidden;
   letter-spacing: 1.5px;
   -webkit-transition: all 0.4s cubic-bezier(0, 0.1, 0, 1.2) 0.2s;
 }
@@ -282,6 +295,7 @@ input:focus {
   }
 }
 .gradient.checked h1 {
+  height: 80%;
   opacity: 1;
-  -webkit-transition: all 0.4s cubic-bezier(0, 0.1, 0, 1.2) 0.3s;
+  -webkit-transition: all 0.4s cubic-bezier(0, 0.1, 0, 1.2) 0.6s;
 }
