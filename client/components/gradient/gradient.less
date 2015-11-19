@@ -19,13 +19,18 @@
   -moz-box-shadow:  0 2px 3px rgba(0,0,0,.2);
   box-shadow:  0 2px 3px rgba(0,0,0,.2);
 
-  display: -webkit-flex;
+  display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  
+  align-items: center;
+  justify-content:center;
+
   -webkit-align-items: center;
-  -webkit-justify-content: center;
-
-
   -webkit-align-content: center;
-  -webkit-align-items: center;
+  
 
   h1{
     font-size: 2em;

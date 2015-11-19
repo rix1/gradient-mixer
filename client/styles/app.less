@@ -41,8 +41,15 @@ footer {
 
 .content-wrapper{
   display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+
   flex-direction: column;
   -webkit-align-items: center;
+  align-items: center;
+
   padding: 10px;
   padding-bottom: 100px;
 }
@@ -96,5 +103,10 @@ footer {
   max-width: 620px;
   margin: 0 auto;
   display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+
   flex-direction: column;
 }
