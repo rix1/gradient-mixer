@@ -107,7 +107,7 @@ myApp.factory('Content', function () {
 	return {
 		heading: "Gradient Mixer!",
 		intro: "This is a simple app that creates permutations of all colors you type in the field below. Enjoy!",
-		tip: "Tip: Paste many colors at once! Click on the gradients to expand."
+		tip: "Protip: Paste many colors at once! Click on the gradients to expand."
 
 	};
 });
