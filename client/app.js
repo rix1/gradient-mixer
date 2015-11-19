@@ -107,10 +107,10 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 		$scope.generated_css = "";
 		var cssTemplate = " \
 // Color #{0} \n\
-	background: -webkit-linear-gradient({1}, {2}); /* For Safari 5.1 to 6.0 */ \n\
-	background: -o-linear-gradient({1}, {2}); /* For Opera 11.1 to 12.0 */ \n\
-	background: -moz-linear-gradient({1}, {2}); /* For Firefox 3.6 to 15 */ \n\
-	background: linear-gradient({1}, {2}); /* Standard syntax */ \n\
+	background: -webkit-linear-gradient(left, {1}, {2}); /* For Safari 5.1 to 6.0 */ \n\
+	background: -o-linear-gradient(left, {1}, {2}); /* For Opera 11.1 to 12.0 */ \n\
+	background: -moz-linear-gradient(left, {1}, {2}); /* For Firefox 3.6 to 15 */ \n\
+	background: linear-gradient(left, {1}, {2}); /* Standard syntax */ \n\
 	";
 		var counter = 0;
 		for (var key in exportGradients) {
