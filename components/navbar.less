@@ -1,0 +1,49 @@
+/*========= NAVBAR ===========*/
+
+
+.nav-wrapper{
+  position: relative;
+  top: 0;
+  z-index: 10;
+  min-width: 100%;
+  display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.nav{
+  /*background-color: pink;*/
+  display: flex;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+
+  flex-direction: row;
+  width: 70%;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-item{
+  font-family: "bebas-neue",sans-serif;
+  font-size: 1.4em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  /*background-color: indianred;*/
+}
+
+.nav-item:hover{
+  border-bottom: 1px solid black;
+}
+
+.nav-item:visited{
+  color: black;
+}
