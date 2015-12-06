@@ -59,6 +59,7 @@ footer {
   font-size: 1.5em;
 }
 .exportarea {
+  width: 70%;
   margin-top: 35px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -75,6 +76,7 @@ footer {
   width: 100%;
 }
 .exportarea textarea {
+  width: 100%;
   border: none;
   outline: none;
   font-size: 13px;
