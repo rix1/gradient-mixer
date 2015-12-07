@@ -1,6 +1,12 @@
 # Gradient Mixer
 
-This is a super little application that I hope pretty much everyone will find useful.
+I’ve created a simple tool to mix and explore colors and gradients: Just paste in a string with one or more hex colors codes and have fun. Live version at: http://rix1.github.io/gradient-mixer/
+Below is an example of how you could export and mix colors from an Illustrator project:
+
+<video loop autoplay>
+  <source src="https://dl.dropboxusercontent.com/spa/3zf8j1n56z1wkw7/ghostblog/public/small.webm" type="video/webm">
+</video>
+
 
 ## Contributing
 
@@ -12,6 +18,7 @@ This is a super little application that I hope pretty much everyone will find us
 
 ## History
 
+2015-12-07 Updated regexpattern to only accept #hex #colors
 2015-11-19 Application is deployed to mix.rix1.org
 
 ## Credits
