@@ -25,13 +25,10 @@
 		<div ng-repeat="grad in gradients track by $index" ng-cloak>
 			<gradient colors="grad" add-to-export="exportCSS(arg1,arg2)">
 			</gradient>
-			<!--{{gradients}}-->
-			<!--vs-->
-			<!--{{grad}}-->
 		</div>
 
 		<div class="el">
-			<input tabindex="1" ng-model="color" type="text" placeholder="Enter one or multiple HEX colors here" autofocus autocomplete="off"/>
+			<input tabindex="1" ng-model="color" type="text" placeholder="Enter one or multiple HEX colors starting with '#'" autofocus autocomplete="off"/>
 		</div>
 		<div ng-cloak class="error"><small>{{error}}</small></div>
 		<button class="btn-round" ng-click="addItem(color)">
@@ -59,5 +56,18 @@
 
 <!--Directives -->
 <script src="components/gradient/gradient.directive.js"></script>
+
+<!-- Google analytics -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', 'UA-71084291-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </html>
