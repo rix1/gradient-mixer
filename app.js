@@ -14,9 +14,9 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 			var args = arguments;
 			return this.replace(/{(\d+)}/g, function(match, number) {
 				return typeof args[number] != 'undefined'
-					? args[number]
-					: match
-					;
+				? args[number]
+				: match
+				;
 			});
 		};
 	}
@@ -39,13 +39,15 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 	$scope.addItem = function (color) {
 		$scope.num = rand();
 
-		var regex  = /([0-9A-F]{6})|([0-9A-F]{3})/ig;
+		var regex  = /(#[0-9A-F]{6})|(#[0-9A-F]{3})/ig;
 
 		if(typeof color === "undefined" || color == null || color == ""){
 			$scope.error = "Wow - weird error... I did not see that one coming.";
 		}else{
 			if(regex.test(color)) {
 				var colors = color.match(regex);
+				var stripped = colors.toString().replace(/#/g,"");
+				colors = stripped.split(",");
 				permute(colors);
 			}else{
 				$scope.error = "Please type one or more valid HEX colors";
@@ -66,12 +68,28 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 		for(var i = 0; i< iterations; i++){
 			var temp = newColors.pop();
 
-			$scope.colors.forEach(function (curr) {
-				$scope.gradients.push([temp, curr, $scope.gradients.length]);
-			});
-			$scope.colors.push(temp);
+			if(contains($scope.colors, temp)){
+				// Skip this element, we don't want duplicates
+			}else{
+				$scope.colors.forEach(function (curr) {
+					$scope.gradients.push([temp, curr, $scope.gradients.length]);
+				});
+				$scope.colors.push(temp);
+			}
 		}
 	};
+
+	function contains(array, value) {
+		var index = -1,
+		length = array ? array.length : 0;
+
+		while (++index < length) {
+			if (array[index] === value) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	$scope.exportCSS = function (arr, show) {
 		if(show){
@@ -86,12 +104,12 @@ myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 	var generateCSS = function () {
 		$scope.generated_css = "";
 		var cssTemplate = " \
-// Color #{0} \n\
-	background: -webkit-linear-gradient(left, {1}, {2}); /* For Safari 5.1 to 6.0 */ \n\
-	background: -o-linear-gradient(left, {1}, {2}); /* For Opera 11.1 to 12.0 */ \n\
-	background: -moz-linear-gradient(left, {1}, {2}); /* For Firefox 3.6 to 15 */ \n\
-	background: linear-gradient(left, {1}, {2}); /* Standard syntax */ \n\
-	";
+		// Color #{0} \n\
+		background: -webkit-linear-gradient(left, {1}, {2}); /* For Safari 5.1 to 6.0 */ \n\
+		background: -o-linear-gradient(left, {1}, {2}); /* For Opera 11.1 to 12.0 */ \n\
+		background: -moz-linear-gradient(left, {1}, {2}); /* For Firefox 3.6 to 15 */ \n\
+		background: linear-gradient(left, {1}, {2}); /* Standard syntax */ \n\
+		";
 		var counter = 0;
 		for (var key in exportGradients) {
 			if (exportGradients.hasOwnProperty(key)) {
