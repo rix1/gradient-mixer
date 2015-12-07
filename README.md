@@ -3,10 +3,7 @@
 I’ve created a simple tool to mix and explore colors and gradients: Just paste in a string with one or more hex colors codes and have fun. Live version at: http://rix1.github.io/gradient-mixer/
 Below is an example of how you could export and mix colors from an Illustrator project:
 
-<video loop autoplay>
-  <source src="https://dl.dropboxusercontent.com/spa/3zf8j1n56z1wkw7/ghostblog/public/small.webm" type="video/webm">
-</video>
-
+[![ScreenShot](https://dl.dropboxusercontent.com/spa/3zf8j1n56z1wkw7/ghostblog/public/img1.jpg)](https://dl.dropboxusercontent.com/spa/3zf8j1n56z1wkw7/ghostblog/public/small.webm)
 
 ## Contributing
 
