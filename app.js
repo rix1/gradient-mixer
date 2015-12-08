@@ -8,6 +8,13 @@ myApp.controller('navCtrl', ['$scope', 'Content', function ($scope, Content) {
 
 myApp.controller('homeCtrl', ['$scope', 'Content', function($scope, Content) {
 
+	$scope.demo = false;
+
+	$scope.showHelp = function(){
+		console.log("help is needed");
+		$scope.demo = !$scope.demo;
+	}
+
 	// First, checks if it isn't implemented yet.
 	if (!String.prototype.format) {
 		String.prototype.format = function() {

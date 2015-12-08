@@ -18,7 +18,15 @@
 			<div class="hero" ng-cloak>
 				<h1>{{content.heading}}!</h1>
 				<p>{{content.intro}}</p>
-				<p><small>{{content.tip}}</small></p>
+				<p><small>{{content.tip}} How? <span class="underline" ng-click="showHelp()">See demo.</span></small></p>
+				<p class="closeTip" ng-show="demo" ng-click="demo = !demo">
+					<small class="push-right">Close</small>
+				</p>
+			</div>
+			<div ng-show="demo" class="video">
+				<video controls="" loop autoplay poster="https://www.dropbox.com/home/Apps/Static%20Web%20Apps/ghostblog/public?preview=img1.jpg">
+					<source src="https://dl.dropboxusercontent.com/spa/3zf8j1n56z1wkw7/ghostblog/public/small.webm" type="video/webm">
+				</video>
 			</div>
 		</div>
 
