@@ -13,10 +13,10 @@ html{
   min-height: 100%;
 }
 
-/* 
-  Allow angular.js to be loaded in body, hiding cloaked elements until 
-  templates compile.  The !important is important given that there may be 
-  other selectors that are more specific or come later and might alter display.  
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
  */
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
@@ -26,6 +26,35 @@ h1{
   font-family: "bebas-neue",sans-serif;
   text-align: center;
 }
+
+.underline{
+    border-bottom: 2px solid rgba(66, 62, 61, 0.2);
+    cursor: pointer;
+}
+
+.video{
+    width: 100%;
+}
+
+.video > video{
+    width: 100%;
+}
+
+.closeTip{
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    padding-bottom: 20px;
+}
+
+.push-right{
+    position: absolute;
+    right: 0;
+    color: rgba(66, 62, 61, 0.8);
+}
+
 
 footer {
   color: fade(@grey_light, 40);
@@ -38,6 +67,8 @@ footer {
   width: 100%;
   text-align: center;
 }
+
+
 
 .content-wrapper{
   display: flex;
@@ -90,7 +121,7 @@ footer {
     background-color: transparent;
   }
 
-  
+
 
 }
 
